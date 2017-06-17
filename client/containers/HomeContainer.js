@@ -9,19 +9,18 @@ class HomeContainer extends Component {
   constructor() {
     super();
     this.state = {
-        user: false
     };
   }
 
   showArticle(article) {
-      this.props.dispatch(syncActions.showArticle(article));
-      this.props.dispatch(push('/blog'))
+    this.props.dispatch(syncActions.showArticle(article));
+    this.props.dispatch(push('/blog'));
   }
 
   render() {
     const that = this;
     return (
-        <Homepage showArticle={that.showArticle.bind(that)} />
+      <Homepage showArticle={that.showArticle.bind(that)} />
     );
   }
 }
