@@ -1,17 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import { Link } from 'react-router-dom';
 import './Dashboard.scss';
 
 class Dashboard extends Component {
-  home() {
-    this.props.dispatch(push('/home'));
-  }
   render() {
     return (<div className="homepage">
       <div className="middle">
         <h1 className="h1">Welcome</h1>
-        <button onClick={this.home.bind(this)}>Click Here</button>
+        <Link to="/home"><button>Click Here</button></Link>
       </div>
     </div>);
   }

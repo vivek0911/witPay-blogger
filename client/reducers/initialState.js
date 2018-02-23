@@ -9,6 +9,7 @@ const initialState = {
     authImg: 'http://beyondwordsdancecompany.com/wp-content/uploads/2014/12/beyond-words-dance-kayla-01.jpg',
     timeStamp: 'Jun 13  .  5 min read',
   },
+  showCmnts: [],
 };
 
 export default initialState;

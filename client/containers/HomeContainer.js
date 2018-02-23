@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import Homepage from '../components/HomeComponent/Homepage';
 import syncActions from '../actions/syncActions';
@@ -14,7 +14,7 @@ class HomeContainer extends Component {
 
   showArticle(article) {
     this.props.dispatch(syncActions.showArticle(article));
-    this.props.dispatch(push('/blog'));
+    this.props.history.push('/blog');
   }
 
   render() {
@@ -30,5 +30,5 @@ HomeContainer.defaultProps = {
 HomeContainer.propTypes = {
   dispatch: PropTypes.func,
 };
-const select = state => ({ state });
-export default connect(select)(HomeContainer);
+const select = state => ({ x: state.articleReducer });
+export default withRouter(connect(select)(HomeContainer));

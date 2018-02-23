@@ -10,6 +10,7 @@ class BlogContainer extends Component {
       like: '',
     };
   }
+  
   onLike(key) {
     this.setState({ like: key });
   }
